@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* UJ Brand Stylesheet */
+
+/* BRAND COLOURS */
+
+.primary_UJ_orange_BG{
+	background-color: #F26522;
+}
+
+.primary_white_BG{
+	background-color: #FFFFFFF;
+	
+}
+
+.seconary_UJ_purple_BG{
+	background-color:#4f2365;
+	
+}
+
+.seconary_grey_BG{
+	background-color:#6D6E71;
+	
+}
+
+.seconary_black_BG{
+	background-color:#000000;
+	
+}
+.highlight_light_purple_BG{
+	background-color:#897AB9;
+	
+}
+
+.highlight_orange_yellow_BG{
+	background-color:#FCAF17;
+	
+}
+
+/*Buttons background in UJ orange/70% grey
+Merriweather bold, sentence case, 14pt, white*/
+
+button{ 
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14pt;
+} 
+
+/* 
+.Heading_Title_VS1{
+Ubuntu bold, upper case, 24pt, UJ orange/white
+}
+.Sub_heading_VS1{
+Merriweather bold, sentence case, 14pt, UJ purple/white
+}
+.Heading_Title_VS2{
+Merriweather regular, sentence case, 24pt, 70% grey/white
+}
+
+.Sub_heading_VS2 {
+Ubuntu bold, upper case, 14pt, UJ orange/white
+}
+.Body_copy{
+Ubuntu regular, sentence case, 12pt, UJ orange/white
+}
+
+*/
+
+
+
+
