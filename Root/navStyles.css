@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* CSS Document */
+table.orangeTable {
+  border: 2px solid #ff9203;
+  background-color: #EEE7DB;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+}
+table.orangeTable td, table.redTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.orangeTable tbody td {
+  font-size: 13px;
+}
+table.orangeTable {
+  background: #f5cfa9;
+  color: #000000;
+}
+table.orangeTable thead {
+  background: #ff5f03;
+}
+table.orangeTable thead th {
+  font-size: 19px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #A40808;
+}
+table.orangeTable thead th:first-child {
+  border-left: none;
+}
+
+table.orangeTable tfoot {
+  font-size: 13px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #ff7d03;
+}
+table.orangeTable tfoot td {
+  font-size: 13px;
+}
+table.orangeTable tfoot .links {
+  text-align: right;
+}
+table.orangeTable tfoot .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #EE5A0F;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+.unitInfo{
+background: rgb(194,180,180);
+background: linear-gradient(90deg, rgba(194,180,180,1) 0%, rgba(208,222,208,1) 100%);
+	margin-bottom: 6px;
+	margin-top: 6px;
+	padding: 4px;
+	color: black;
+}
+
+.lineS{
+	border: #FEFEFE;
+	border-bottom: solid;
+	border-bottom-width: thin;
+	
+	
+}
