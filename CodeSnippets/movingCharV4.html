@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fast runner</title>
+<style>
+.charGuy {
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+}
+.roadCol {
+    width: 600px;
+    height: 60px;
+    background-color: black;
+}
+</style>
+</head>
+	
+<body>
+<section id="roadImg" class="roadCol">
+  <div id="runnerGuy" class="charGuy"></div>
+</section>
+<button id="startGameBtn">start game</button>
+<button id="moveGuyBtn">move guy</button>
+
+<!--<br>
+<br>
+<hr>
+<h2>Timer</h2>
+<button onclick="StartTimer()">Start</button>
+<button onclick="StopTimer()">Stop</button>
+<p id="demo">Timer will appear here</p>
+<p id="demo2">Timer 2 will appear here</p>
+	
+<h2>JavaScript let</h2>
+
+<p id="demo3">i</p>
+<p id="demo4">ms</p>
+<p id="demo5">numbers</p>
+
+-->
+
+<script>
+
+/*   MOVE ELEMENT    */
+const littleGuy = document.getElementById("runnerGuy");
+let movement = 20;
+const pixel = "px";
+let movPx;
+const marLef = littleGuy.style;
+const startButton = document.getElementById("startGameBtn");
+const moveButton = document.getElementById("moveGuyBtn");
+
+/* ----- EVENT LISTNERS ----- */	
+//create event listner to check when the user starts the game
+startButton.addEventListener("click", startGame);	
+//create event listner to check if the user has clicked on the move button
+moveButton.addEventListener("click", moveMove);
+/* ---------------------------- */
+	
+/* ----- FUNCTIONS ----- */
+
+// function to launch the game when 'start game' button is clicked
+function startGame(){
+  startMove(); // This sets the movement at 20px;
+/*-------- DEBUG --------- */
+/* monitor the values*/
+// console.log("startGame has movement value of " + movement);
+// console.log("startGame has movPx value of " + movPx);
+ } 
+
+// function to initiate the 1st movement value at 20px- this will be triggered when the user starts the game
+function startMove(){
+  movement = movement; // starts it at default value of 20px
+  movPx= movement + pixel; 	
+/*
+// -------- DEBUG  --------- // to monitor the values
+//console.log("startMove has movement value of " + movement);
+//console.log("startMove has movPx value of " + movPx);
+*/
+  }
+	
+// function to move the margin 20px on each click of the move button
+function moveMove(){
+movement = movement + 20;
+movPx= movement + pixel;
+console.log("moveMove has movement value of " + movement);
+console.log("moveMove has movPx value of " + movPx);
+marLef.marginLeft = movPx;
+}
+
+/* ---------------------------- */
+
+
+/*  KEEP TIME   */
+
+
+setTimeout(myTimeout1, 2000) 
+setTimeout(myTimeout2, 4000) 
+setTimeout(myTimeout3, 6000) 
+setTimeout(myTimeout4, 8000) 
+
+
+
+
+function myTimeout1() { 
+  document.getElementById("demo").innerHTML = "2 seconds";
+}
+function myTimeout2() {
+  document.getElementById("demo").innerHTML = "4 seconds";
+}
+function myTimeout3() {
+  document.getElementById("demo").innerHTML = "6 seconds";
+}
+function myTimeout4() {
+  document.getElementById("demo").innerHTML = "at 8 seconds" + " ms is " + time;
+}
+
+
+// change time 
+let time = 2000;
+setTimeout(watchTimer, time);
+
+function watchTimer() {
+time = time;
+}
+
+
+function StartTimer() {
+document.getElementById("demo").innerHTML = time;
+document.getElementById("demo2").innerHTML = "add " + time + " miliseconds";
+time = time + 1000;
+
+}
+
+// loop through the array
+let i = 1;
+for (i = 0; i < 10; i++) {
+  // some statements
+console.log(i);
+//document.getElementById("demo3").innerHTML = i;
+
+let msLen = i.length;
+console.log(msLen);
+}
+
+
+// set up an array
+
+//(var i=0, var len = a.length; i<len; i++)
+
+
+//let ms = 10;
+
+//for (ms = 10; ms < 100; ms++) {
+  // some statements
+//console.log(ms);
+//}
+	
+//setTimeout(myTimeout, ms) 
+
+/*function myTimeout() {
+console.log(i);
+}
+// count clicks
+var count = 0;
+      var button = document.getElementById("myButton");
+      var countDisplay = document.getElementById("count");
+      button.addEventListener("click", function() {
+         count++;
+         countDisplay.innerHTML = count;
+      });
+*/
+	
+</script>
+</body>
+</html>

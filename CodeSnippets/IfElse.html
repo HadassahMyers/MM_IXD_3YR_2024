@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>If Else / User Input</title>
+</head>
+<body>
+<h1>NOT SO COOL MATHS GAME</h1>	
+<h2>What is 1 + 1?</h2>
+<input type="text" id="userInput"/>
+<button onclick="userInputFunction()">get user input</button>
+<div id="pushJS"></div>
+	
+<script>
+// listen for html onclick event 
+function userInputFunction(){
+// create a variable to hold the value the user has input
+let inputVal = document.getElementById("userInput").value;
+// log value to the console to check if your code is working and has saved the value
+console.log(inputVal);
+
+/* CREATE AN IF, ELSE IF, ELSE STATEMENT TO CHECK AND RESPOND TO TWO POSSIBLE CONDITIONS */
+//check if the first condition is true- in this case whether the user has give the correct answer 
+if (inputVal==2) {
+//  block of code to be executed if the first condition is true
+    document.getElementById("pushJS").innerHTML = "you have answered 2- YOU WIN";
+
+
+} else if (inputVal==3) {
+//  block of code to be executed if the first condition is false and the second condition is true
+	alert("3 is the wrong answer. Try again!")
+
+  
+} else {
+//  block of code to be executed if the first condition  is false and the second condition is false
+	alert("WRONG ANSWER! You loose")  
+}
+	}
+</script>
+	
+</body>
+</html>

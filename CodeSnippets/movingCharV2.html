@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fast runner</title>
+<style>
+.charGuy {
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+}
+.roadCol {
+    width: 600px;
+    height: 45px;
+    background-color: black;
+}
+</style>
+</head>
+	
+<body>
+<section id="roadImg" class="roadCol">
+  <div id="runnerGuy" class="charGuy"></div>
+</section>
+<button id="startGameBtn">start game</button>
+<button id="moveGuyBtn">move guy</button>
+
+<h2>Timer</h2>
+<button onclick="StartTimer()">Start</button>
+<button onclick="StopTimer()">Stop</button>
+<p id="demo">Timer will appear here</p>
+<p id="demo2">Timer 2 will appear here</p>
+	
+
+<script>
+
+/*   MOVE ELEMENT    */
+const littleGuy = document.getElementById("runnerGuy");
+let movement = 20;
+const pixel = "px";
+let movPx;
+const marLef = littleGuy.style;
+const startButton = document.getElementById("startGameBtn");
+const moveButton = document.getElementById("moveGuyBtn");
+
+/* ----- EVENT LISTNERS ----- */	
+//create event listner to check when the user starts the game
+startButton.addEventListener("click", startGame);	
+//create event listner to check if the user has clicked on the move button
+moveButton.addEventListener("click", moveMove);
+/* ---------------------------- */
+	
+/* ----- FUNCTIONS ----- */
+
+// function to launch the game when 'start game' button is clicked
+function startGame(){
+  startMove(); // This sets the movement at 20px;
+/*-------- DEBUG --------- */
+/* monitor the values*/
+// console.log("startGame has movement value of " + movement);
+// console.log("startGame has movPx value of " + movPx);
+ } 
+
+// function to initiate the 1st movement value at 20px- this will be triggered when the user starts the game
+function startMove(){
+  movement = movement; // starts it at default value of 20px
+  movPx= movement + pixel; 	
+/*
+// -------- DEBUG  --------- // to monitor the values
+//console.log("startMove has movement value of " + movement);
+//console.log("startMove has movPx value of " + movPx);
+*/
+  }
+	
+// function to move the margin 20px on each click of the move button
+function moveMove(){
+movement = movement + 20;
+movPx= movement + pixel;
+console.log("moveMove has movement value of " + movement);
+console.log("moveMove has movPx value of " + movPx);
+marLef.marginLeft = movPx;
+}
+
+/* ---------------------------- */
+
+
+/*  KEEP TIME   */
+
+
+setTimeout(myTimeout1, 2000) 
+setTimeout(myTimeout2, 4000) 
+setTimeout(myTimeout3, 6000) 
+
+function myTimeout1() { 
+  document.getElementById("demo").innerHTML = "2 seconds";
+}
+function myTimeout2() {
+  document.getElementById("demo").innerHTML = "4 seconds";
+}
+function myTimeout3() {
+  document.getElementById("demo").innerHTML = "6 seconds";
+}
+
+
+// change time 
+let time = 1000;
+setTimeout(watchTimer, time);
+
+function watchTimer() {
+time = time;
+}
+
+
+function StartTimer() {
+document.getElementById("demo2").innerHTML = "add " + time + " miliseconds";
+time = time + 1000;
+
+}
+
+	
+</script>
+</body>
+</html>

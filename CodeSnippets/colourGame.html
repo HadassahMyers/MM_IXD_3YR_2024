@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Colour Games</title>
+<style>
+.flexrow {
+    background-color: aqua;
+    display: flex;
+    width: 300px;
+    height: 60px;
+    padding: 4px;
+    margin: 4px;
+}
+.swatches1 {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+}
+.swatches2 {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    border-radius: 50%;
+}
+.green {
+    background-color: green;
+}
+.orange {
+    background-color: orange;
+}
+.purple {
+    background-color: mediumpurple;
+}
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+    color: white;
+}
+.black {
+    background-color: black;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+	
+<!--COLOUR MATCH GAME QUESTION-->
+<section class="flexrow">
+  <button id="buttonChoose">what colour am I?</button>
+</section>
+<button onclick = "startGame()">Click here to find out</button>
+<!--colour section of circles-->
+<section class="flexrow">
+  <div id="greenCir" class="swatches2 black">G</div>
+  <div id="orangeCir" class="swatches2 black">O</div>
+  <div id="purpleCir" class="swatches2 black">P</div>
+  <div id="redCir" class="swatches2 black">R</div>
+</section>
+<!--colour section of squares -->
+<section class="flexrow">
+  <div id="redSqu" class="swatches1 blue">R</div>
+  <div id="orangeSqu" class="swatches1 blue">O</div>
+  <div id="greenSqu" class="swatches1 blue">G</div>
+  <div id="purpleSqu" class="swatches1 blue">P</div>
+</section>
+<!--Button for testing JS-->
+<button onclick="testi()">TEST JS</button>
+
+<script>
+
+/*VARIABLES */
+
+/* html document objects */
+//question btn
+const questionButton = document.getElementById("buttonChoose");
+//circles
+const orangeRoundButton = document.getElementById("orangeCir");
+const greenRoundButton = document.getElementById("greenCir");
+const purpleRoundButton = document.getElementById("purpleCir");
+const redRoundButton = document.getElementById("redCir");
+//squares
+const orangeSquareButton = document.getElementById("orangeSqu");
+const greenSquareButton = document.getElementById("greenSqu");
+const purpleSquareButton = document.getElementById("purpleSqu");
+const redSquareButton = document.getElementById("redSqu");
+const boolValTrue = true;
+const boolValFalse = false;
+let boolVal = false;
+/* change values */
+let point = 0;
+let round1ColourOrangeC = false;
+let round2ColourGreenC = false;
+let round3ColourPurpleC = false;
+let round4ColourRedC = false;
+let round1ColourOrangeS = false;
+let round2ColourGreenS = false;
+let round3ColourPurpleS = false;
+let round4ColourRedS = false;
+
+/* EVENT LISTENERS */
+//circles
+orangeRoundButton.addEventListener("click", orangeClick);
+greenRoundButton.addEventListener("click", greenClick);
+purpleRoundButton.addEventListener("click", purpleClick);
+redRoundButton.addEventListener("click", redClick)
+//squares
+orangeSquareButton.addEventListener("click", orangeClickSq);
+greenSquareButton.addEventListener("click", greenClickSq);
+purpleSquareButton.addEventListener("click", purpleClickSq);
+redSquareButton.addEventListener("click", redClickSq);
+
+// START GAME WITH ORANGE AS TARGET COLOUR FOR MATCHING
+let styleOfButton = questionButton.style;
+styleOfButton.backgroundColor = "aqua";
+
+function startGame() {
+    styleOfButton.backgroundColor = "orange";
+}
+
+/*FUNCTIONS	*/
+/*FIRST ROUND - CHOOSE ORANGE*/
+	
+// Orange circle 
+function firstRoundC() {
+    round1ColourOrangeC = true;
+    round2ColourGreenC = false;
+    round3ColourPurpleC = false;
+    round4ColourRedC = false;
+    console.log("orange round - circle click is:");
+    console.log(" Boolean value is " + round1ColourOrangeC);
+}
+// Orange square 
+function firstRoundS() {
+    round1ColourOrangeS = true;
+    round2ColourGreenS = false;
+    round3ColourPurpleS = false;
+    round4ColourRedS = false;
+    console.log("Orange Circle- Score is " + point);
+    console.log(" Boolean value is " + round1ColourOrangeS);
+}
+
+/*WHEN USER SELECTS THE CIRCLES*/
+function orangeClick() {
+    point = point + 1;
+    orangeRoundButton.classList.remove("black");
+    orangeRoundButton.classList.add("orange");
+    console.log("Orange Circle")
+    console.log(point);
+    firstRoundC();
+}
+
+function greenClick() {
+    console.log("Green Circle")
+    greenRoundButton.classList.remove("black");
+    greenRoundButton.classList.add("green");
+}
+
+function purpleClick() {
+    console.log("Purple Circle")
+    purpleRoundButton.classList.remove("black");
+    purpleRoundButton.classList.add("purple")
+}
+
+function redClick() {
+    console.log("Red Circle")
+    redRoundButton.classList.remove("black");
+    redRoundButton.classList.add("red");
+}
+	
+/*WHEN USER SELECTS THE SQUARES*/
+function orangeClickSq() {
+    point = point + 1;
+    console.log(" you have " + point + "point");
+    orangeSquareButton.classList.remove("blue");
+    orangeSquareButton.classList.add("orange");
+    console.log("Orange Square- Score is " + point);
+    firstRoundS();
+};
+
+function greenClickSq() {
+    console.log("Green Square")
+};
+
+function purpleClickSq() {
+    console.log("Purple Square")
+};
+
+function redClickSq() {
+    console.log("Red Square")
+};
+	
+/*CHECK IF USER HAD CLICKED ON THE MATCHING COLOUR - FIRST ROUND - ORANGE*/
+function testi() {
+    console.log(round1ColourOrangeC);
+    if ((round1ColourOrangeC == true) && (round1ColourOrangeS == true)) {
+        console.log("test shows that round1ColourOrange circle and square are both true");
+    }
+    else {
+        console.log("test shows that circle and square are not both true");
+    };
+}
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Practice Excercise JS</title>
+<style>
+body {
+    font-family: Arial;
+}
+.inputClass {
+    width: 60%;
+    padding: 12px 20px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+.buttonClass {
+    width: 30%;
+    padding: 12px 20px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #6B0C89;
+    color: aliceblue;
+}
+.buttonClass:hover {
+    background-color: #CF5DEC;
+}
+div.container {
+    width: 80%;
+    border-radius: 5px;
+    padding: 20px;
+}
+</style>
+</head>
+	
+<body>
+<h2>Lesson 4</h2>
+<h4>Practice Lesson 1</h4>
+<div class="container">
+  <input id="userInput" class="inputClass" value="dummy text" type="text">
+  <button id="myBtn" class ="buttonClass" onclick ="getAnsFunction()">Button</button>
+  <p id="demo">watch this space to see magic</p>
+</div>
+	
+<h4>Practice Lesson 2</h4>	
+<div class="container">
+  <button onclick="practiceJsFun1()">magic button</button>
+  <button onclick="practiceJsFun2()">pass through silly numbers</button>
+  <button onclick="practiceJsFun3()">pass through silly numbers in a quicker way</button>
+  <br><br>
+  <button onclick="practiceJsFunSummary()">IN SUMMARY</button>
+</div>
+
+<!--BEGIN JS	-->
+	
+<script>						   
+								   
+function getAnsFunction(silly1Change,silly2Change) {
+ let getUserInput = document.getElementById("userInput").value;
+ document.getElementById("demo").innerHTML = getUserInput;
+ alert(getUserInput);
+}
+
+function practiceJsFun1(silly1Change,silly2Change){
+let sillyNum1 = 1;
+let sillyNum2 = 2;	
+let sillyMathSum = sillyNum1 + sillyNum2;
+
+console.log("1st button: sillyMathSum = " + " " + sillyMathSum);
+return(sillyMathSum);	
+
+//create new variable to carry through without data so it can ve changed in the next function
+silly1Change = sillyNum1;
+silly2Change = sillyNum2; 
+
+};	
+
+function practiceJsFun2(silly1Change,silly2Change){
+silly1Change = 4;
+silly2Change = 6;
+let sillyMathSum = silly1Change + silly2Change;
+
+console.log("2nd button: sillyMathSum =" + " " + sillyMathSum);
+return(sillyMathSum);	
+};
+
+// pass through silly numbers in a quicker way
+
+function practiceJsFun3(){
+
+ let quickWay = myFunction(4, 3); 
+ console.log("3rd button: quickway =" + " "+ quickWay);
+ return(quickWay);
+	
+ function myFunction(silly1Change,silly2Change){
+ return silly1Change + silly2Change; 
+	
+ }; 
+
+	}
+
+function practiceJsFun4(silly1Change,silly2Change){
+silly1Change = 2;
+silly2Change = 2;
+let sillyMathSum = silly1Change + silly2Change;
+
+
+console.log("1practiceJsFun4 = " + " " + sillyMathSum);
+return(sillyMathSum);
+
+}
+//practiceJsFun4();
+	
+// This function can access all the block scope variables through the function calls
+
+function practiceJsFunSummary(){
+console.log("in summary I can call the previous functions through a new function and thereby see the block level values")
+console.log(practiceJsFun1());	
+console.log(practiceJsFun2());	
+console.log(practiceJsFun3());	
+practiceJsFun4();
+
+}
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Intro to JS</title>
+<style>
+* {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.buttonclass {
+    background-color: darkblue;
+    width: 400px;
+    height: 100px;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+<h1>Open the console and click the button below:</h1>
+<button class="buttonclass" onclick="myFunction()">click me</button>
+
+<script>
+
+// function is evoked on an html event (ie onclick event)
+function myFunction(){
+x = 5;
+y = 6;
+z = (x + y);
+console.log(z);	
+}
+	
+// or use a callback
+//myFunction();
+	
+</script>
+</body>
+</html>

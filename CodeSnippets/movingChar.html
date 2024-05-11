@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fast runner</title>
+<style>
+.charGuy {
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+}
+.roadCol {
+    width: 600px;
+    height: 45px;
+    background-color: black;
+}
+</style>
+</head>
+<body>
+<section id="roadImg" class="roadCol">
+  <div id="runnerGuy" class="charGuy"></div>
+</section>
+<button id="startGameBtn">start game</button>
+<button id="moveGuyBtn">move guy</button>
+<!--<button onclick="myStopFunction()">Stop</button>-->
+
+<script>
+
+const littleGuy = document.getElementById("runnerGuy");
+let movement = 20;
+const pixel = "px";
+let movPx;
+const marLef = littleGuy.style;
+const startButton = document.getElementById("startGameBtn");
+const moveButton = document.getElementById("moveGuyBtn");
+
+
+// create event listners to check if the user has clicked on the move button
+moveButton.addEventListener("click", moveMove);
+	
+	
+// create a function to move the margin on each click
+function moveMove(){
+movement = movement + 20;
+movPx= movement + pixel;
+console.log("moveMove has movement value of " + movement);
+console.log("moveMove has movPx value of " + movPx);
+marLef.marginLeft = movPx;
+
+
+}
+	
+function moveMove2(){
+movement = movement + 20;
+console.log("moveMove2 has movement value of " + movement);
+movPx= movement + pixel;
+console.log("moveMove2 has movPx value of " + movPx);
+
+
+}
+	
+// create event listners to check if the user has clicked on the start button
+startButton.addEventListener("click", startGame);
+	
+// launch the game when 'start game' button is clicked
+function startGame(){
+alert("hi");
+littleGuy.style.backgroundColor = "red";
+console.log("startGame has movement value of " + movement);
+console.log("startGame has movPx value of " + movPx);
+moveMove2();
+}
+
+
+
+//littleGuy.style.marginLeft = "20px";
+//marLef.marginLeft = movPx;
+//console.log(styleChange);
+// get guy to move accross screen
+	
+
+
+/*function myFunction() {
+	const keepTime = setTimeout(watchTimer, 2000);
+	function watchTimer() {
+		//littleGuy.style.marginLeft = movPx;
+		alert("Hello World! after every 2 seconds ");
+		littleGuy.style.backgroundColor = "red";
+	}
+}*/
+	/*function myStopFunction(){
+		clearTimeout(keepTime);
+	}*/
+
+	
+</script>
+	
+</body>
+</html>

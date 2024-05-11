@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Change Classes</title>
+<style>
+
+.blueSky {
+    background-color: darkblue;
+}
+.greySky {
+    background-color: grey;
+}
+#skyImage {
+    width: 200px;
+    height: 200px;
+}
+</style>
+</head>
+
+<body>
+<h1>COLOUR GAME</h1>
+<h2>Choose what colour you want the sky</h2>
+<button onclick="userInputBlue()">Blue</button>
+<button onclick="userInputGrey()">Grey</button>
+<p>The Sky is:</p>
+<div id="skyImage"></div>
+
+<script>
+ 
+function userInputBlue(){
+  const element = document.getElementById("skyImage");  // Get the DIV element
+  element.classList.remove("greySky"); // Remove greySky class from DIV
+  element.classList.add("blueSky"); // Add blueSky class to DIV
+}
+function userInputGrey(){
+  const element = document.getElementById("skyImage");  // Get the DIV element
+  element.classList.remove("blueSky"); // Remove blueSky class from DIV
+  element.classList.add("greySky"); // Add greySky class to DIV
+}
+	
+</script>
+	
+</body>
+</html>

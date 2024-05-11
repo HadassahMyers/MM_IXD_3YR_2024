@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fast runner</title>
+<style>
+.charGuy {
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+}
+.roadCol {
+    width: 600px;
+    height: 60px;
+    background-color: black;
+}
+.display {
+    display: block;
+}
+.doNotDisplay {
+    display: none;
+}
+#startAgain {
+    width: 200px;
+    height: 100px;
+    background-color: darkred;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+<section id="roadImg" class="roadCol">
+  <div id="runnerGuy" class="charGuy"></div>
+</section>
+<button id="moveGuyBtn" class="display">move guy</button>
+<button id="startAgain" class="doNotDisplay">start again</button>
+	
+<script>
+
+/*   Initial variables   */
+
+/*   STORE DOCUMENT OBJECTS   */
+const littleGuy = document.getElementById("runnerGuy");
+const marLef = littleGuy.style;
+const moveButton = document.getElementById("moveGuyBtn");
+const startAgain = document.getElementById("startAgain");
+
+/*   MOVE ELEMENT    */
+let movement = 0;
+const pixel = "px";
+let movPx;
+
+let count = 0;
+
+/* ----- EVENT LISTNERS ----- */
+
+//create event listner to check when the user starts the game
+moveButton.addEventListener("click", moveMove);
+startAgain.addEventListener("click", resetMoveMove);
+
+/* ---------------------------- */
+
+/* ----- FUNCTIONS ----- */
+
+// function to move the margin 20px on each click of the move button
+function moveMove() {
+    
+    /*  COUNT CLICKS  */
+    count = count + 1;
+    
+    if (count < 6) {
+        console.log("the user has clicked " + count + " times");
+        moveButton.classList.add("display");
+        
+    } else {
+        moveButton.classList.remove("display");
+        moveButton.classList.add("doNotDisplay");
+        startAgain.classList.add("display");
+        startAgain.classList.remove("doNotDisplay");
+    }
+    
+    //console.log("the use has clicked " + count + " times");	
+    movement = movement + 100;
+    movPx = movement + pixel;
+    //console.log("moveMove has movement value of " + movement);
+    //console.log("moveMove has movPx value of " + movPx);
+    marLef.marginLeft = movPx;
+	
+}
+
+/* ---------------------------- */
+
+/*  RESTART GAME AND RESET VARIABLES  */
+	
+function resetMoveMove() {
+    movPx = 0;
+    movement = 0;
+    count = 0;
+    console.log(movement);
+    marLef.marginLeft = movPx;
+    console.log(movPx);
+    moveButton.classList.remove("doNotDisplay");
+    moveButton.classList.add("display");
+    startAgain.classList.add("doNotDisplay");
+    startAgain.classList.remove("display");
+   
+}
+
+</script>
+</body>
+</html>

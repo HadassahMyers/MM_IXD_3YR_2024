@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fast runner</title>
+<style>
+.charGuy {
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+}
+.roadCol {
+    width: 600px;
+    height: 60px;
+    background-color: black;
+}
+</style>
+</head>
+	
+<body>
+<section id="roadImg" class="roadCol">
+  <div id="runnerGuy" class="charGuy"></div>
+</section>
+<button id="moveGuyBtn">move guy</button>
+
+
+<script>
+
+/*   Initial variables   */
+	
+/*   STORE DOCUMENT OBJECTS   */
+const littleGuy = document.getElementById("runnerGuy");
+const marLef = littleGuy.style;
+const moveButton = document.getElementById("moveGuyBtn");
+	
+/*   MOVE ELEMENT    */
+let movement = 0;
+const pixel = "px";
+let movPx;
+
+
+/* ----- EVENT LISTNERS ----- */	
+//create event listner to check when the user starts the game
+
+moveButton.addEventListener("click", moveMove);
+/* ---------------------------- */
+	
+/* ----- FUNCTIONS ----- */
+
+	
+// function to move the margin 20px on each click of the move button
+function moveMove(){
+movement = movement + 10;
+movPx= movement + pixel;
+console.log("moveMove has movement value of " + movement);
+console.log("moveMove has movPx value of " + movPx);
+marLef.marginLeft = movPx;
+}
+
+/* ---------------------------- */
+
+	
+</script>
+</body>
+</html>

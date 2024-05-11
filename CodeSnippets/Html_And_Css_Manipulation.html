@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM Manipulation</title>
+<style>
+* {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.buttony {
+    background-color: #EA4C89;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+.buttony:hover, .buttony:focus {
+    background-color: #F082AC;
+}
+}
+</style>
+</head>
+	
+<body>
+<h1>JavaScript can Change HTML</h1>
+<h2 id="p1" style="color: blue">Old Text</h2>
+<h2 id="p2">Watch me change colour..... </h2>
+<button class="buttony" role="button" onclick="clicky()">Transform 'Old Text' </button>
+<button class="buttony" role="button" onclick="clickyclick()" style=" background-color: #CA2629;">Make magic!</button>
+
+	<!--JavaScript goes at the end - just before the closing of the body tag-->
+<script>
+// Code to change text and colour of p1
+function clicky(){
+document.getElementById("p1").innerHTML = "New Text (NO WAY- HOW COOL????)";
+document.getElementById("p1").style.color = "green";
+};
+	
+// Code to change text and colour of p2	
+function clickyclick(){
+document.getElementById("p2").style.color = "red";
+document.getElementById("p2").innerHTML = "WOHHOO JS is MAGIC!!!!! WOW I'm red now";
+}
+</script>
+	
+</body>
+</html>
